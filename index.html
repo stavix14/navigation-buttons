@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"><title>Navigation Web Component</title></head>
+  <body>
+    <nav-buttons current-page="1"></nav-buttons>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      document.querySelector('nav-buttons')
+        .addEventListener('page-change', (e) => {
+          console.log('Page change:', e.detail.direction);
+        });
+    </script>
+  </body>
+</html>
