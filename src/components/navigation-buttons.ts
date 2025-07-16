@@ -195,7 +195,7 @@ class NavigationButtons extends HTMLElement {
             if (item === ELLIPSIS) {
                 const span = document.createElement('span');
                 span.className = 'ellipsis';
-                span.textContent = 'ELLIPSIS';
+                span.textContent = ELLIPSIS;
 
                 fragment.appendChild(span);
             }
