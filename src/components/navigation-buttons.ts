@@ -28,7 +28,7 @@ const generatePagination = (currentPage: number, totalPages: number) => {
     }
 
     if (shouldShowLeftEllipsis && shouldShowRightEllipsis) {
-        const middleRange = [leftPageNumber, currentPage, rightPageNumber]
+        const middleRange = [leftPageNumber, currentPage, rightPageNumber];
 
         return [firstPageIndex, ELLIPSIS, ...middleRange, ELLIPSIS, lastPageIndex];
     }
@@ -122,7 +122,7 @@ class NavigationButtons extends HTMLElement {
     constructor() {
         super();
 
-        this.attachShadow({ mode: 'open' });
+        this.shadow = this.attachShadow({ mode: 'open' });
 
         this.shadow!.appendChild(template.content.cloneNode(true));
 
