@@ -1,4 +1,4 @@
-const ELLIPSIS = '...';
+const ELLIPSIS = -1;
 
 const generatePagination = (currentPage: number, totalPages: number) => {
     const maxBtnNumbersCount = 6;
@@ -36,8 +36,8 @@ const generatePagination = (currentPage: number, totalPages: number) => {
     return [];
 }
 
-const template = document.createElement('template');
-template.innerHTML = `
+const navTemplate = document.createElement('template');
+navTemplate.innerHTML = `
     <style>
         :host {
             display: block;
@@ -124,7 +124,7 @@ class NavigationButtons extends HTMLElement {
 
         this.shadow = this.attachShadow({ mode: 'open' });
 
-        this.shadow!.appendChild(template.content.cloneNode(true));
+        this.shadow!.appendChild(navTemplate.content.cloneNode(true));
 
         this.pageButtonsContainer = this.shadow!.querySelector('#page-buttons-container')!;
         this.prevButton = this.shadow!.querySelector('#prev-button')!;
@@ -195,7 +195,7 @@ class NavigationButtons extends HTMLElement {
             if (item === ELLIPSIS) {
                 const span = document.createElement('span');
                 span.className = 'ellipsis';
-                span.textContent = ELLIPSIS;
+                span.textContent = '...';
 
                 fragment.appendChild(span);
             }
